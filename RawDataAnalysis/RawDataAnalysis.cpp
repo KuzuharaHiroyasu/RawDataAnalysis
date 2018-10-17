@@ -92,6 +92,7 @@ int main()
 	timer = time(NULL);
 	if (localtime_s(&timeptr, &timer))
 	{
+		fclose(fp);
 		return 1;
 	}
 
@@ -194,9 +195,9 @@ int main()
 		debug_out("snpk", &pulse, 1, path_, no);
 
 		acdc_average(pdata, ar1, ai1, p3, pulse, len, no);	//ACÅADCÇÃïΩãœíléZèo
-
-		fclose(fp);
 	}
+
+	fclose(fp);
 }
 
 /*==============================================================================*/
